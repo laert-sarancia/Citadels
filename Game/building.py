@@ -7,3 +7,7 @@ class Building:
         self.property = property
 
     #def building_name():
+
+
+if __name__ == "__main__":
+    print("This is internal file. Try to use 'start.py'")

@@ -25,3 +25,7 @@ class Player:
             return None
         self.gold -= n
         return n
+
+
+if __name__ == "__main__":
+    print("This is internal file. Try to use 'start.py'")
