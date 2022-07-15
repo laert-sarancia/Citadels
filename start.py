@@ -1,4 +1,4 @@
-from Game import game
+from game import game
 
 exit = False
 
