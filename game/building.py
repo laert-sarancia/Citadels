@@ -1,6 +1,7 @@
 class Building:
 
-    def __init__(self, name: str, price: int, color: str, property: str):
+    def __init__(self, id, name: str, price: int, color: str, property: str):
+        self.id = id
         self.name = name
         self.price = price
         self.color = color

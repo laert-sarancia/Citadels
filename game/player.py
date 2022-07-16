@@ -1,5 +1,5 @@
 import random
-from building import Building
+from game.building import Building
 
 
 class Player:

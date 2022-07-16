@@ -1,40 +1,42 @@
-import random
-from player import Player
-from building import Building
-import sqlite3
+from game.player import Player
+from game.building import Building
+from game.data_base import DB
+
+BUILDINGS = "buildings"
 
 
 class Game:
-    max_building_amount = 8
-    game_end = False
+    base = DB()
 
-    def __int__(self, max_players: int = 7):
-        self.max_players = max_players
+    def __init__(self, number_of_players):
+        self.max_building_amount = 8
+        self.game_end = False
+        self.number_of_players = number_of_players
         self.dict_of_players = dict()
         self.free_drawings = self.get_drawings()
         self.used_drawings = list()
 
     def set_players(self):
-        for i in range(self.max_players):
+        for i in range(self.number_of_players):
             name = f"Player{i}"
             self.dict_of_players.update({name: Player})  # ToDo add class Player
 
     def game_loop(self):
-        while self.game_end:
-            pass
+        while not self.game_end:
+            value = input("End game? Y/N")
+            if value.lower() == "y":
+                break
 
     def get_drawings(self) -> list:
         """
         this method gets all drawings from DB and saves them as a list of objects
         :return: list_of_drawings
         """
-        conn = sqlite3.connect('buildings.db')
-        cur = conn.cursor()
-        # cur.execute("ВАШ-SQL-ЗАПРОС-ЗДЕСЬ;")
-        # for building in db_buildings:
-        #     self.free_drawings.append(
-        #         Building(building["name"], building["price"], building["color"], building["properties"]))
-        pass
+        list_of_drawings = list()
+        all_d = self.base.all_select(BUILDINGS)
+        for building in all_d:
+            list_of_drawings.append(Building(*building))
+        return list_of_drawings
 
 
 if __name__ == "__main__":
