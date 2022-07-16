@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # add table
     base.add_table(BUILDINGS, fields)
     # fill table
-    base.load_data_from_file("buildings.csv", BUILDINGS)
+    base.load_data_from_file("source/buildings.csv", BUILDINGS)
     # get all
     pprint(base.all_select(BUILDINGS))
     # get special
