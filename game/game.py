@@ -14,7 +14,6 @@ class Game:
         self.number_of_players = number_of_players
         self.dict_of_players = dict()
         self.free_drawings = self.get_drawings()
-        self.used_drawings = list()
 
     def set_players(self):
         for i in range(self.number_of_players):
