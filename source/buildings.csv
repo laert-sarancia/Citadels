@@ -1,26 +1,80 @@
 id,name,price,color,description
-1,Cemetery,5,purple,"когда Кондотьер разрушает квартал игрока, в городе которого построено Кладбище, игрок может заплатить 1 золотой, чтобы забрать карту разрушенного квартала в руку. Игрок не может этого сделать, если он же и был Кондотьером. Свойство Кладбища используется после хода последнего игрока в круге."
-2,Fort,3,purple,"Кондотьер/Дипломат не могут разрушить/заменить Форт."
-3,The university,6,purple,"стоимость строительства этого квартала 6 золотых, а при подсчете баллов в конце игры этот квартал дает 8 очков. Цена разрушения квартала Кондотьером считается от цены постройки и равна 5 золотым"
-4,Dragon Gate,6,purple,"стоимость строительства этого квартала 6 золотых, а при подсчете баллов в конце игры этот квартал дает 8 очков. Цена разрушения квартала Кондотьером считается от цены постройки и равна 5 золотым"
-5,School of Magic,6,purple,"во время подсчета дохода за ход Школа Магии может быть кварталом любого цвета по выбору игрока. Например, если в текущем туре игрок - Король, Школа Магии может быть засчитана, как желтый"
-6,Laboratory,5,purple,"один раз за ход игрок имеет право избавиться от 1 карты квартала с руки и получить из банка 1 золотой."
-7,Observatory,5,purple,"если в свой ход игрок решает взять карты кварталов из колоды, то он берет 3 карты, выбирает себе одну из них, а остальные кладет под низ колоды."
-8,Forge,5,purple,"один раз за ход игрок имеет возможность заплатить 2 золотых за право получить 3 карты кварталов."
-9,Great Wall,6,purple,"для того, чтобы разрушить один из кварталов игрока, построившего в своем городе Великую Стену, Кондотьеру придется потратить на 1 золотой больше, т.е. номинальную цену квартала."
-10,Ghost town,2,purple,"во время финального подсчета баллов Город Призраков может быть кварталом любого цвета по выбору игрока. Свойство не применяется, если квартал построен в последнем круге."
-11,Library,6,purple,"если во время своего действия игрок решает брать из колоды карты кварталов, то он оставляет себе обе карты."
-12,Throne room,6,purple,"каждый раз, когда корона переходит из рук в руки, игрок получает золотой из банка."
-13,Quarry,5,purple,"при строительстве кварталов игрок имеет право построить квартал, который уже есть у него в городе. Одновременно в городе может быть только два одинаковых квартала."
-14,Museum,4,purple,"во время своего хода игрок имеет возможность положить одну карту с руки рубашкой вверх под Музей. В конце игры игрок получает призовой балл за каждую карту под музеем. Если Кондотьер разрушает Музей, то все карты под ним возвращаются в колоду."
-15,Factory,6,purple,"для игрока, построившего в своем городе Фабрику, стоимость постройки других лиловых кварталов уменьшается на 1 золотой. Это не влияет на стоимость разрушения кварталов Кондотьером."
-16,Ballroom,6,purple,"когда корона находится у игрока, построившего Бальный Зал, все другие игроки на вызов игрока должны отвечать словами: Спасибо, Ваше Величество. Тот, кто забыл это сделать, пропускает свой ход."
-17,Belfry,5,purple,"построив в своем городе Звонницу, игрок имеет возможность объявить, что игра будет идти до постройки 7 квартала. Это разрешено даже в том случае, когда Звонница сама является седьмым кварталом. Если Звонница будет разрушена, то правила опять становятся прежними."
-18,Arsenal,3,purple,"в свой ход игрок имеет возможность разрушить Арсенал, чтобы уничтожить любой квартал по своему выбору в городе другого игрока ."
-19,Lighthouse,3,purple,"когда игрок строит Маяк в своем городе, он может просмотреть колоду кварталов, выбрать одну карту и взять её в руку. После этого игрок должен перетасовать колоду. Свойство используется 1 раз сразу после постройки."
-20,The park,6,purple,"если после окончания своего хода у игрока нет на руке карт, он имеет право взять 2 карты из колоды кварталов."
-21,Hospital,6,purple,"даже если игрока пытались убить, он сохраняет возможность действия в этом круге (но не может строить кварталы или использовать свойства своего персонажа)."
-22,archive,5,purple,"в конце игры игрок получает по 1 баллу за каждую карту в руке."
-23,Almshouse,5,purple,"если в конце хода у игрока нет золота, он получает 1 золотой из банка. Золотые, расположенные на кварталах города (поставленные Художником для украшения), не считаются золотом игрока."
-24,Imperial Treasury,4,purple,"после окончания игры игрок получает по 1 баллу за каждый золотой, имеющийся в его распоряжении. Золотые, расположенные на кварталах города (поставленные Художником для украшения), не считаются золотом игрока."
-25,Well of Wishes,6,purple,"в конце игры игрок получает 1 очко за каждый другой лиловый квартал своего города."
+1,Cemetery,5,purple,"when a Warlord destroys a player's quarter in whose city a Cemetery is built the player can pay 1 gold to pick up a card of the destroyed quarter in his hand. A player cannot do this if he was also a Warlord. The Cemetery property is used after the turn of the last player in the circle."
+2,Fort,3,purple,"a Warlord/Diplomat cannot destroy/replace a Fort."
+3,The university,6,purple,"the cost of building this quarter is 6 gold and when calculating points at the end of the game this quarter gives 8 points. The price of the destruction of the quarter by the Warlord is considered from the price of construction and is equal to 5 gold"
+4,Dragon Gate,6,purple,"the cost of building this quarter is 6 gold and when calculating points at the end of the game this quarter gives 8 points. The price of the destruction of the quarter by the Warlord is considered from the price of construction and is equal to 5 gold"
+5,School of Magic,6,purple,"during the calculation of income per turn the School of Magic can be a quarter of any color of the player's choice. For example if the player is the King in the current round the School of Magic can be counted as yellow"
+6,Laboratory,5,purple,"once per turn the player has the right to get rid of 1 quarter card from his hand and get 1 gold from the bank."
+7,Observatory,5,purple,"if a player decides to take quarter cards from the deck on his turn then he takes 3 cards chooses one of them for himself and puts the rest under the bottom of the deck."
+8,Forge,5,purple,"once per turn the player has the opportunity to pay 2 gold for the right to receive 3 quarter cards."
+9,Great Wall,6,purple,"in order to destroy one of the quarters of a player who has built a Great Wall in his city the Warlord will have to spend 1 gold more i.e. the nominal price of the quarter."
+10,Ghost town,2,purple,"during the final scoring the Ghost Town can be a quarter of any color of the player's choice. The property is not applied if the quarter is built in the last circle."
+11,Library,6,purple,"if during his action the player decides to take quarter cards from the deck then he keeps both cards for himself."
+12,Throne room,6,purple,"Each time the crown changes hands the player receives a gold piece from the bank."
+13,Quarry,5,purple,"when building quarter the player has the right to build a quarter that he already has in the city. There can only be two identical quarter in a city at the same time."
+14,Museum,4,purple,"during his turn the player has the opportunity to put one card from his hand face down under the Museum. At the end of the game the player receives a bonus point for each card under the museum. If the Warlord destroys the Museum then all the cards under it are returned to the deck."
+15,Factory,6,purple,"for a player who has built a Factory in his city the cost of building other purple quarters is reduced by 1 gold. This does not affect the cost of destroying neighborhoods by a Warlord."
+16,Ballroom,6,purple,"when the crown is in the possession of the player who built the Ballroom all other players must respond to the player's challenge with words: Thank you Your Majesty. The one who forgot to do it skips his turn."
+17,Belfry,5,purple,"having built a Belfry in his city the player has the opportunity to announce that the game will go on until the construction of the 7th quarter. This is allowed even in the case when the Belfry itself is the seventh quarter. If the Belfry is destroyed then the rules become the same again."
+18,Arsenal,3,purple,"on his turn the player has the opportunity to destroy the Arsenal in order to destroy any quarter of his choice in the other player's city."
+19,Lighthouse,3,purple,"when a player builds a Lighthouse in his city he can view a deck of quarters select one card and take it in his hand. After that the player must shuffle the deck. The property is used 1 time immediately after construction."
+20,The park,6,purple,"if after the end of his turn the player has no cards in his hand he has the right to take 2 cards from the deck of quarters."
+21,Hospital,6,purple,"even if a player was tried to be killed he retains the ability to act in this circle (but cannot build quarters or use the properties of his character)."
+22,archive,5,purple,"at the end of the game the player receives 1 point for each card in his hand."
+23,Almshouse,5,purple,"if the player has no gold at the end of the turn he gets 1 gold from the bank. Gold coins located on city quarters (set by the Artist for decoration) are not considered the player's gold."
+24,Imperial Treasury,4,purple,"after the end of the game the player receives 1 point for each gold available to him. Gold coins located on city quarters (set by the Artist for decoration) are not considered the player's gold."
+25,Well of Wishes,6,purple,"at the end of the game the player gets 1 point for every other purple quarter of his city."
+26,Fort,3,purple,"A Warlord/Diplomat cannot destroy/replace a Fort."
+27,Tavern,1,green,
+28,Tavern,1,green,
+29,Tavern,1,green,
+30,Tavern,1,green,
+31,Tavern,1,green,
+32,Shop,2,green,
+33,Shop,2,green,
+34,Shop,2,green,
+35,Exchange,2,green,
+36,Exchange,2,green,
+37,Exchange,2,green,
+38,Exchange,2,green,
+39,Port,3,green,
+40,Port,3,green,
+41,Port,3,green,
+42,Harbor,4,green,
+43,Harbor,4,green,
+44,Harbor,4,green,
+45,Town Hall,5,green,
+46,Town Hall,5,green,
+47,Temple,1,blue,
+48,Temple,1,blue,
+49,Temple,1,blue,
+50,Church,2,blue,
+51,Church,2,blue,
+52,Church,2,blue,
+53,Monastery,3,blue,
+54,Monastery,3,blue,
+55,Monastery,3,blue,
+56,The Cathedral,5,blue,
+57,The Cathedral,5,blue,
+58,Watchtower,1,red,
+59,Watchtower,1,red,
+60,Watchtower,1,red,
+61,Prison,2,red,
+62,Prison,2,red,
+63,Prison,2,red,
+64,The Field of Mars,3,red,
+65,The Field of Mars,3,red,
+66,The Field of Mars,3,red,
+67,Fortress,5,red,
+68,The Estate,3,yellow,
+69,The Estate,3,yellow,
+70,The Estate,3,yellow,
+71,The Estate,3,yellow,
+72,The Estate,3,yellow,
+73,Castle,4,yellow,
+74,Castle,4,yellow,
+75,Castle,4,yellow,
+76,Castle,4,yellow,
+77,Palazzo,5,yellow,
+78,Palazzo,5,yellow,
+79,Palazzo,5,yellow,
