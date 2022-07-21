@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from game.game import Game
 
 exit = False
@@ -19,7 +21,7 @@ def settings() -> int:
     try:
         while int(n_pl) not in available_amount:
             n_pl = int(input("Set number of players (4, 5, 6, 7):"))
-        return n_pl
+        return int(n_pl)
     except ValueError:
         print("Please, input a number from range (4, 5, 6, 7)")
         settings()
@@ -33,7 +35,10 @@ def main_loop(name):
         print(f"Game #{game} started.")
         setting = settings()
         new_game = Game(setting)
+        new_game.set_player(name)
+        new_game.first_crown()
         new_game.game_loop()
+        # new_game.show_statistics()
 
         answer = input("Do you want to start again? Y/N:")
         if answer.lower() == "n":

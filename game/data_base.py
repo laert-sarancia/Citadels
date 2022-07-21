@@ -74,12 +74,18 @@ if __name__ == "__main__":
     fields = {"name": "TEXT", "price": "INT", "color": "TEXT", "preference": "TEXT"}
     base = DB()
     # delete table
-    base.delete_table(BUILDINGS)
+    # base.delete_table(BUILDINGS)
     # add table
-    base.add_table(BUILDINGS, fields)
+    # base.add_table(BUILDINGS, fields)
     # fill table
-    base.load_data_from_file("source/buildings.csv", BUILDINGS)
+    # base.load_data_from_file("source/buildings.csv", BUILDINGS)
     # get all
-    pprint(base.all_select(BUILDINGS))
+    # pprint(base.all_select(BUILDINGS))
     # get special
-    print(base.exec(f"SELECT * from {BUILDINGS} WHERE id = 5"))
+    result = base.exec(f"""SELECT name from {BUILDINGS} WHERE color = "purple";""")
+    print(result)
+
+    for name in result:
+        print(f'''
+    def {name[0].lower().replace(" ", "_")}(self):
+        pass''')
