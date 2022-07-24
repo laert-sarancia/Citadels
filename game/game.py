@@ -36,6 +36,7 @@ class Game:
         self.game_end = False
         self.number_of_players = number_of_players
         self.free_drawings = self.get_drawings()
+        random.shuffle(self.free_drawings)
         self.dict_of_players = {key: Player(self.set_name(), self.free_drawings) for key in range(number_of_players)}
         self.sequence = [i for i in range(self.number_of_players)]
 
@@ -58,6 +59,9 @@ class Game:
                 print("King is", self.dict_of_players[pl].name, pl)  # ToDo REMOVE after debug
                 while self.sequence[0] != pl:
                     self.sequence.append(self.sequence.pop(0))
+
+    def shuffle_cards(self):
+        random.shuffle(self.free_drawings)
 
     def shuffle_roles(self):
         temp_roles = [i for i in range(1, len(self.roles) + 1)]
@@ -94,19 +98,28 @@ class Game:
 
             pop = temp_roles.pop(a)
             self.dict_of_players[pl].role = self.roles[pop]
-            print(self.dict_of_players[pl].name, self.dict_of_players[pl].role)  # ToDo Remove after debug
+            # print(self.dict_of_players[pl].name, self.dict_of_players[pl].role)  # ToDo Remove after debug
+        print("last role", temp_roles)
         self.hidden_roles.append(*temp_roles)
 
     def call_of_king(self):
-        pass
+        for role in self.roles:
+            print(f"King call {self.roles[role]}")
+            if role in self.open_roles or role in self.hidden_roles:
+                print(f"{self.roles[role]} is out.")
+            else:
+                for pl in self.dict_of_players:
+                    if self.dict_of_players[pl].role == self.roles[role]:
+                        self.dict_of_players[pl].action()
+                        break
+        #   Action
+        #   Build
 
     def game_loop(self):
         while not self.game_end:
             self.set_sequence()
             self.choose_role()
             self.call_of_king()
-            #   Action
-            #   Build
             value = input("End game? Y/N")  # ToDo complete
             if value.lower() == "y":
                 break
