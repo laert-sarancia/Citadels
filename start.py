@@ -6,7 +6,7 @@ from game.game import Game, Proto
 
 BUILDINGS = "buildings"
 EXIT = False
-
+NUMBER_OF_PLAYERS = (4, 5, 6)
 
 def _get_drawings() -> list:
     """
@@ -33,14 +33,13 @@ Enter your name:''')
 
 
 def settings() -> int:
-    available_amount = (4, 5, 6, 7)
-    n_pl = input("Set number of players (4, 5, 6, 7):")
+    n_pl = input(f"Set number of players {NUMBER_OF_PLAYERS}:")
     try:
-        while int(n_pl) not in available_amount:
-            n_pl = int(input("Set number of players (4, 5, 6, 7):"))
+        while int(n_pl) not in NUMBER_OF_PLAYERS:
+            n_pl = int(input(f"Set number of players {NUMBER_OF_PLAYERS}:"))
         return int(n_pl)
     except ValueError:
-        print("Please, input a number from range (4, 5, 6, 7)")
+        print(f"Please, input a number from range {NUMBER_OF_PLAYERS}")
         settings()
 
 
