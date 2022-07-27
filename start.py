@@ -8,6 +8,7 @@ BUILDINGS = "buildings"
 EXIT = False
 NUMBER_OF_PLAYERS = (4, 5, 6)
 
+
 def _get_drawings() -> list:
     """
     this method gets all drawings from DB and saves them as a list of objects
@@ -23,6 +24,10 @@ def _get_drawings() -> list:
 
 
 def start() -> str:
+    """
+    This function contain description of game and gets player's name on start
+    :return: player's name
+    """
     return input(  # ToDo extend description
         '''
         Welcome to The Citadels
@@ -43,7 +48,12 @@ def settings() -> int:
         settings()
 
 
-def main_loop(name):
+def main_loop(name: str):
+    """
+    It's the main loop of game. Here, each game will run endlessly until the player wants to exit
+    :param name:
+    :return:
+    """
     game = 0
     global EXIT
     while not EXIT:
