@@ -1,8 +1,25 @@
 from pprint import pprint
 
-from game.game import Game
+from game.building import Building
+from game.data_base import DB
+from game.game import Game, Proto
 
-exit = False
+BUILDINGS = "buildings"
+EXIT = False
+
+
+def _get_drawings() -> list:
+    """
+    this method gets all drawings from DB and saves them as a list of objects
+    :return: list_of_drawings
+    """
+
+    base = DB()
+    list_of_drawings = list()
+    all_d = base.all_select(BUILDINGS)
+    for building in all_d:
+        list_of_drawings.append(Building(*building))
+    return list_of_drawings
 
 
 def start() -> str:
@@ -29,8 +46,8 @@ def settings() -> int:
 
 def main_loop(name):
     game = 0
-    global exit
-    while not exit:
+    global EXIT
+    while not EXIT:
         game += 1
         print(f"Game #{game} started.")
         setting = settings()
@@ -42,10 +59,11 @@ def main_loop(name):
 
         answer = input("Do you want to start again? Y/N:")
         if answer.lower() == "n":
-            exit = True
+            EXIT = True
     print(f"Goodbye, {name}!")
 
 
 if __name__ == "__main__":
+    Proto.deck = _get_drawings()
     name = start()
     main_loop(name)

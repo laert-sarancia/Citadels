@@ -1,11 +1,6 @@
 import random
-from pprint import pprint
-import copy
 from game.player import Player
-from game.building import Building
-from game.data_base import DB
 
-BUILDINGS = "buildings"
 NAMES = ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hoffmann",
          "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schröder", "Neumann", "Schwarz", "Zimmermann",
          "Braun", "Krüger", "Hofmann", "Hartmann", "Lange", "Schmitt", "Werner", "Schmitz", "Krause", "Meier",
@@ -18,9 +13,14 @@ NAMES = ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner
          "Engel", "Horn", "Busch", "Bergmann", "Thomas", "Voigt", "Sauer", "Arnold", "Wolff", "Pfeiffer"]
 
 
-class Game:
-    base = DB()
+class Proto:
+    deck = None
 
+    def shuffle_cards(self):
+        random.shuffle(self.deck)
+
+
+class Game(Proto):
     def __init__(self, number_of_players):
         self.roles = {1: "Assassin",
                       2: "Thief",
@@ -35,9 +35,7 @@ class Game:
         self.max_building_amount = 8
         self.game_end = False
         self.number_of_players = number_of_players
-        self.free_drawings = self.get_drawings()
-        random.shuffle(self.free_drawings)
-        self.dict_of_players = {key: Player(self.set_name(), self.free_drawings) for key in range(number_of_players)}
+        self.dict_of_players = {key: Player(self.set_name()) for key in range(number_of_players)}
         self.sequence = [i for i in range(self.number_of_players)]
 
     def set_name(self):
@@ -60,8 +58,6 @@ class Game:
                 while self.sequence[0] != pl:
                     self.sequence.append(self.sequence.pop(0))
 
-    def shuffle_cards(self):
-        random.shuffle(self.free_drawings)
 
     def shuffle_roles(self):
         temp_roles = [i for i in range(1, len(self.roles) + 1)]
@@ -124,16 +120,6 @@ class Game:
             if value.lower() == "y":
                 break
 
-    def get_drawings(self) -> list:
-        """
-        this method gets all drawings from DB and saves them as a list of objects
-        :return: list_of_drawings
-        """
-        list_of_drawings = list()
-        all_d = self.base.all_select(BUILDINGS)
-        for building in all_d:
-            list_of_drawings.append(Building(*building))
-        return list_of_drawings
 
     def show_statistics(self):
         for pl in self.dict_of_players:

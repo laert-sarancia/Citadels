@@ -19,7 +19,7 @@ class Player(Proto):
 
     def get_start_drawings(self):
         for _ in range(4):
-            self.drawings.append(self.desk.pop(0))
+            self.drawings.append(self.deck.pop(0))
 
     def add_score(self, n):
         self.score += n
@@ -65,7 +65,7 @@ class Player(Proto):
         else:
             pool = []
             for _ in range(self.income_drawings):
-                pool.append(self.desk.pop(0))
+                pool.append(self.deck.pop(0))
             if self.is_player:
                 a = []
                 for _ in range(self.income_safe_drawings):
@@ -75,7 +75,7 @@ class Player(Proto):
             else:
                 for _ in range(self.income_safe_drawings):
                     self.ai_choice(pool)
-            self.desk.append(*pool)
+            self.deck.append(*pool)
 
     def ai_choice(self, pool: list) -> list:
         """
