@@ -1,14 +1,12 @@
 import random
-# from building import Building
-from pprint import pprint
+from game.game import Proto
 
 
-class Player:
+class Player(Proto):
 
-    def __init__(self, name: str, free_drawings: list, is_player: bool = False):
+    def __init__(self, name: str, is_player: bool = False):
         self.name = name
         self.is_player = is_player
-        self.free_drawings = free_drawings
         self.gold = 2
         self.drawings = list()
         self.buildings = list()
@@ -21,7 +19,7 @@ class Player:
 
     def get_start_drawings(self):
         for _ in range(4):
-            self.drawings.append(self.free_drawings.pop(0))
+            self.drawings.append(self.desk.pop(0))
 
     def add_score(self, n):
         self.score += n
@@ -46,9 +44,9 @@ class Player:
                 for i, card in enumerate(self.drawings):
                     print("Your hand:")
                     print(f"{i}: {card.name}")
-                a = input("Select card to drop:")
+            a = input("Select card to drop:")
         else:
-            a = random.randint(len(self.drawings))
+            a = random.randint(0, len(self.drawings)-1)
         free_drawings = self.drawings.pop(a)
         return free_drawings
 
@@ -67,7 +65,7 @@ class Player:
         else:
             pool = []
             for _ in range(self.income_drawings):
-                pool.append(self.free_drawings.pop(0))
+                pool.append(self.desk.pop(0))
             if self.is_player:
                 a = []
                 for _ in range(self.income_safe_drawings):
@@ -77,7 +75,7 @@ class Player:
             else:
                 for _ in range(self.income_safe_drawings):
                     self.ai_choice(pool)
-            self.free_drawings.append(*pool)
+            self.desk.append(*pool)
 
     def ai_choice(self, pool: list) -> list:
         """
